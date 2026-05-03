@@ -1,0 +1,108 @@
+/**
+ * brands.ts — all brand families in the Ellari Ventures ecosystem
+ * Add new brands here as they launch.
+ */
+import type { Brand } from "./types";
+
+export const BRANDS: Brand[] = [
+  {
+    id: "logic_rigor",
+    name: "Logic Rigor / EMET",
+    tagline: "Cognitive precision training — powered by the EMET Engine",
+    domain: "logic.naci.tech",
+    entity: "Ellari Ventures LLC",
+    color: "#8a8070",
+    bgColor: "#0a0a0c",
+    textColor: "#e8e0d0",
+    status: "active",
+    description: "AI-powered analysis of sentences, citations, and arguments. Five wrappers, one engine. Catch The Pattern™, Inspection Defense™, Citation Calm™, Pattern Glow™, Name Before You File™.",
+  },
+  {
+    id: "kindergurus",
+    name: "KinderGurus",
+    tagline: "Regulatory language training for childcare teams",
+    domain: "kindergurus.com",
+    entity: "Caretide Systems LLC",
+    color: "#6a8a5a",
+    bgColor: "#f5faf2",
+    textColor: "#1a2814",
+    status: "active",
+    description: "B2B cohort training built on the EMET engine. Structured curriculum, completion certificates, and group facilitation for licensed childcare operators.",
+  },
+  {
+    id: "seal_protocol",
+    name: "The Seal Protocol",
+    tagline: "Truth, Sealed. Proven. Held.",
+    domain: "sealforge.app",
+    entity: "Ellari Ventures LLC",
+    color: "#c8a840",
+    bgColor: "#0c0a08",
+    textColor: "#e8e0c8",
+    status: "building",
+    description: "Consumer-facing truth verification architecture. Five-brand stack: SealForge (create), AxisCourt (verify), AnchorVault (store), CourtLedger (audit), SigilGate (represent).",
+  },
+  {
+    id: "mirror_protocol",
+    name: "Mirror Protocol",
+    tagline: "Behavioral assessment and relational health",
+    domain: "mirrorprotocol.ai",
+    entity: "Ellari Ventures LLC",
+    color: "#8a5040",
+    bgColor: "#faf7f3",
+    textColor: "#1a1614",
+    status: "building",
+    description: "MirrorMatch behavioral assessment. VANTA Decision Scoring System. Mirror Bloom relational health. The verification infrastructure beneath the Seal Protocol.",
+  },
+  {
+    id: "ash_record_press",
+    name: "Ash & Record Press",
+    tagline: "Books and spoken word by Naci Sigler",
+    domain: "nacisigler.com",
+    entity: "Ellari Ventures LLC",
+    color: "#4a4238",
+    bgColor: "#fdfaf6",
+    textColor: "#1c1814",
+    status: "active",
+    description: "30+ published books across fiction, nonfiction, poetry, and spoken word. Available on Amazon, Etsy, and Walmart. Naci Sigler is the author name.",
+  },
+  {
+    id: "a11y_gate",
+    name: "A11y Gate × PAR™",
+    tagline: "Accessibility compliance and audit infrastructure",
+    domain: "a11ygate.com",
+    entity: "Ellari Ventures LLC",
+    color: "#405880",
+    bgColor: "#f4f6fa",
+    textColor: "#1a1c28",
+    status: "building",
+    description: "Accessibility compliance layer for SaaS products. PAR™ (Progressive Accessibility Rating) system. Investor-ready audit infrastructure.",
+  },
+  {
+    id: "eleos",
+    name: "ELEOS",
+    tagline: "Cognitive operating system and IP portfolio",
+    domain: "ellari.dev",
+    entity: "Ellari Ventures LLC",
+    color: "#534AB7",
+    bgColor: "#0a0a10",
+    textColor: "#e0defa",
+    status: "building",
+    description: "The cognitive operating system underlying all products. ELEOS is the architecture, not the product. Canon OS™, NIS™, MirrorTone™, and the full IP portfolio.",
+  },
+  {
+    id: "ellari_ventures",
+    name: "Ellari Ventures",
+    tagline: "The umbrella — all entities, all products",
+    domain: "ellari.dev",
+    entity: "Ellari Ventures LLC",
+    color: "#534AB7",
+    bgColor: "#fdfaf6",
+    textColor: "#1c1814",
+    status: "active",
+    description: "Parent entity for the full Ellari Ventures ecosystem. All brands, all products, one operator.",
+  },
+];
+
+export const BRAND_MAP = Object.fromEntries(
+  BRANDS.map((b) => [b.id, b])
+) as Record<string, Brand>;
