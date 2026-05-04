@@ -299,7 +299,7 @@ export const PRODUCTS: Product[] = [
     price: 0,
     priceDisplay: "From $9.99",
     ctaText: "Browse Books →",
-    ctaUrl: "https://www.amazon.com/s?k=naci+sigler",
+    ctaUrl: "https://www.amazon.com/s?k=naci+sigler&utm_source=shopellari&utm_medium=store&utm_campaign=books&utm_content=naci-sigler-books",
     tags: ["books", "author", "fiction", "poetry", "spoken word", "Naci Sigler"],
   },
 
