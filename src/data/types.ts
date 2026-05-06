@@ -63,6 +63,10 @@ export interface Product {
   featured?: boolean;     // show in featured row
   route?: string;         // logic.naci.tech/ROUTE for "See it live" link
   tags?: string[];        // for search
+  buyer_state?: string;
+  complexity_level?: string;
+  not_for_you_if?: string[];
+  works_with?: string[];
 }
 
 // === ShopEllari Brand Book v1.0 — V's Schema Additions ===

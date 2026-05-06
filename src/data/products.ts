@@ -64,7 +64,12 @@ export const PRODUCTS: Product[] = [
     ctaUrl: "https://buy.stripe.com/7sY14p4DI3D96tG2nx7kc0a",
     route: "/app",
     tags: ["scholar", "mirror bloom", "30-day", "api", "export"],
-  },
+  
+  buyer_state: "curious",
+  complexity_level: "high",
+  not_for_you_if: ["You are a beginner — start with the 30-Day Challenge first", "You need formal regulatory analysis — this is personal cognitive training"],
+  works_with: ["catch-the-pattern", "pattern-glow-challenge"],
+},
 
   {
     id: "pattern-glow-challenge",
@@ -91,7 +96,12 @@ export const PRODUCTS: Product[] = [
     featured: true,
     route: "/mirror-bloom",
     tags: ["mirror bloom", "30-day", "challenge", "personal development", "presuppositions"],
-  },
+  
+  buyer_state: "overwhelmed",
+  complexity_level: "low",
+  not_for_you_if: ["You already have an analysis framework and want advanced modes", "You need a formal regulatory defense tool"],
+  works_with: ["catch-the-pattern", "pattern-glow-scholar"],
+},
 
   // ── LOGIC RIGOR — REGULATORY ────────────────────────────────────────
 
@@ -119,7 +129,12 @@ export const PRODUCTS: Product[] = [
     featured: true,
     route: "/inspection-defense",
     tags: ["inspection", "citation", "regulatory", "HHSC", "admin review", "childcare", "operator"],
-  },
+  
+  buyer_state: "protecting",
+  complexity_level: "medium",
+  not_for_you_if: ["You are not in a regulated licensed environment", "You want a personal pattern training tool — see Catch The Pattern instead"],
+  works_with: ["citation-calm-starter", "directors-defense-full", "catch-the-pattern"],
+},
 
   {
     id: "citation-shield-facility",
@@ -174,7 +189,12 @@ export const PRODUCTS: Product[] = [
     featured: true,
     route: "/for-directors",
     tags: ["directors", "daycare", "citation", "new director", "plain language", "HHSC"],
-  },
+  
+  buyer_state: "overwhelmed",
+  complexity_level: "low",
+  not_for_you_if: ["You need the Admin Review generator — upgrade to Full Access", "You are not a licensed childcare operator"],
+  works_with: ["directors-defense-full", "inspection-defense-individual"],
+},
 
   {
     id: "directors-defense-full",
@@ -199,7 +219,12 @@ export const PRODUCTS: Product[] = [
     ctaUrl: "https://buy.stripe.com/14A5kFgmqddJcS4gen7kc0d",
     route: "/for-directors",
     tags: ["directors", "admin review", "appeal", "daycare", "HHSC", "unlimited"],
-  },
+  
+  buyer_state: "protecting",
+  complexity_level: "medium",
+  not_for_you_if: ["You are not a licensed childcare director or program administrator", "You want pattern training only — see Catch The Pattern"],
+  works_with: ["citation-calm-starter", "inspection-defense-individual", "catch-the-pattern"],
+},
 
   {
     id: "directors-defense-facility",
@@ -224,7 +249,12 @@ export const PRODUCTS: Product[] = [
     ctaUrl: "https://buy.stripe.com/3cIfZjfimgpV6tGaU37kc0c",
     route: "/for-directors",
     tags: ["directors", "facility", "team", "multi-seat", "childcare", "admin review"],
-  },
+  
+  buyer_state: "protecting",
+  complexity_level: "medium",
+  not_for_you_if: ["You only need one seat — see Full Access", "You do not manage a team of directors or compliance staff"],
+  works_with: ["directors-defense-full", "inspection-defense-facility"],
+},
 
   // ── LOGIC RIGOR — NAMING/IP ─────────────────────────────────────────
 
@@ -277,7 +307,12 @@ export const PRODUCTS: Product[] = [
     ctaUrl: "mailto:hello@ellari.dev?subject=KinderGurus Cohort Inquiry",
     featured: true,
     tags: ["B2B", "cohort", "childcare", "team training", "compliance", "certificates"],
-  },
+  
+  buyer_state: "scaling",
+  complexity_level: "high",
+  not_for_you_if: ["You are not operating or opening a childcare facility", "You want a self-guided tool — cohort requires facilitated participation"],
+  works_with: ["inspection-defense-individual", "citation-calm-starter", "directors-defense-full"],
+},
 
   // ── ASH & RECORD PRESS — BOOKS ───────────────────────────────────────
 

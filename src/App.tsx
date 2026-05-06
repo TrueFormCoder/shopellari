@@ -1,3 +1,5 @@
+import HomePage from './pages/HomePage';
+import { StacksIndex, StackDetail } from './pages/StackPage';
 /**
  * App.tsx update — add Routes for /product/[slug] and update ProductCard
  * to show "View details" link + WaitlistCapture for waitlist products
@@ -200,9 +202,11 @@ function Store() {
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Store />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/product/:slug" element={<ProductDetail />} />
       <Route path="*" element={<Store />} />
-    </Routes>
+      <Route path="/stacks" element={<StacksIndex />} />
+          <Route path="/stacks/:id" element={<StackDetail />} />
+        </Routes>
   );
 }
