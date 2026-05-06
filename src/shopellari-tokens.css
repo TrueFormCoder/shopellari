@@ -1,0 +1,112 @@
+/* ============================================================
+   ShopEllari™ Design Token System v1.0
+   ISO: 2026-05-06
+   Locked palette — do not add colors outside this file.
+   Product line accents: 10% max per page.
+   ============================================================ */
+
+:root {
+  /* --- Primary Palette (Global Lock) --- */
+  --se-cream:        #f9f6f1;   /* base canvas */
+  --se-black:        #1a1a1a;   /* authority text + UI anchors */
+  --se-gold:         #d6b168;   /* signal, dividers, highlights */
+
+  /* --- Extended Neutrals (Commerce Scaling) --- */
+  --se-soft-gray:    #e6e2dc;   /* section separation */
+  --se-mid-gray:     #b8b3ac;   /* secondary text */
+  --se-deep-charcoal:#2a2a2a;   /* hover states / depth */
+  --se-card-surface: #111115;   /* lifted card surface (Ellari Studio floor) */
+  --se-card-border:  #2a2826;   /* muted card border */
+
+  /* --- Functional Accents (STRICTLY LIMITED — errors/success only) --- */
+  --se-signal-red:   #b94a48;   /* errors, urgency — NEVER decorative */
+  --se-soft-green:   #6a8f6b;   /* success states — NEVER decorative */
+
+  /* --- Product Line Accents (10% max per page) --- */
+  --accent-mirror:       #c4877a;   /* MirrorMama — warm clay */
+  --accent-mirror-light: #e8c4bb;   /* MirrorMama — soft rose */
+  --accent-a11ygate:     #6b82a0;   /* A11yGate — blue-gray */
+  --accent-eleos:        #534AB7;   /* ELEOS / Aetherion — deep indigo */
+  --accent-vault:        #7a7870;   /* MirrorVault / Records — graphite */
+  --accent-vault-light:  #e8e4dc;   /* MirrorVault — parchment */
+  --accent-ritual:       #8b3a3a;   /* Ritual / Canon — oxblood */
+  --accent-ritual-gold:  #c4a052;   /* Ritual — antique gold */
+  --accent-professional: #5c6b7a;   /* Professional / HRD — slate */
+  --accent-studio:       #b87a42;   /* Ellari Studio — copper */
+  --accent-kindergurus:  #6a8f6b;   /* KinderGurus — sage */
+  --accent-logic:        #534AB7;   /* Logic Rigor / EMET — purple */
+
+  /* --- Typography Scale --- */
+  --font-serif:      'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans:       'Inter', 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono:       'IBM Plex Mono', 'DM Mono', 'Courier New', monospace;
+
+  /* Role assignments:
+     --font-serif  = meaning / narrative / weight (headers, titles, collection names)
+     --font-sans   = function / action / usability (descriptions, UI, buttons, forms)
+     --font-mono   = system / metadata / IDs (version stamps, system IDs, seals)
+     Rule: Every font switch must signal purpose. No random mixing. */
+
+  /* --- Type Scale --- */
+  --text-hero:    clamp(2.5rem, 5vw, 4rem);
+  --text-h1:      clamp(2rem, 4vw, 3rem);
+  --text-h2:      clamp(1.5rem, 3vw, 2.25rem);
+  --text-h3:      clamp(1.25rem, 2.5vw, 1.75rem);
+  --text-body:    1rem;
+  --text-small:   0.875rem;
+  --text-meta:    0.75rem;    /* mono metadata, IDs, version stamps */
+
+  /* --- Spacing Units --- */
+  --space-section: 80px;     /* between major sections */
+  --space-card:    24px;     /* card internal padding */
+  --space-grid:    20px;     /* grid gap */
+  --space-block:   48px;     /* between content blocks within section */
+  --content-max:   1200px;   /* max content width */
+
+  /* --- Component Defaults --- */
+  --border-card:   1px solid var(--se-soft-gray);
+  --radius-card:   4px;      /* restrained — archive-commerce, not app-bubbly */
+  --radius-btn:    2px;
+  --divider-gold:  1px solid var(--se-gold);
+
+  /* --- Button System ---
+     Primary:   black bg + cream text  (--se-black bg, --se-cream text)
+     Secondary: transparent + cream text + thin gold border
+     System:    purple underline or small mono label (--accent-eleos)
+     CTA text override: Cloudflare Pages uses these globally */
+
+  /* --- Motion (Minimal = Authority) ---
+     Approved: slow fade-in (0.3s ease-out), subtle hover shift, line draw (gold divider)
+     Forbidden: bounce, pop-in, over-animated UI, parallax scroll chaos */
+  --transition-base:   0.2s ease-out;
+  --transition-reveal: 0.35s ease-out;
+
+  /* --- Depth System ---
+     Layer 0: --se-cream      (base canvas)
+     Layer 1: --se-soft-gray  (section blocks)
+     Layer 2: --se-deep-charcoal (hover / active)
+     Dividers: --se-gold (thin, intentional — authority signal)
+     Never: drop shadows everywhere, gradient chaos, trendy effects */
+
+  /* --- Visual Hierarchy Rule ---
+     Primary CTA:   black bg + cream text
+     Secondary CTA: outline only (transparent + --se-gold border)
+     Metadata:      --se-mid-gray + var(--font-mono) */
+}
+
+/* --- Accessibility: contrast must never be sacrificed for atmosphere ---
+   If text contrast fails:
+   1. Darken background one step OR
+   2. Lighten text to full --se-cream
+   NEVER reduce font weight or use opacity to cheat contrast.
+
+   Print rule: flip to light bg for --se-black text printing
+   (--se-cream backgrounds are expensive/muddy in print) */
+
+@media print {
+  :root {
+    --se-cream: #ffffff;
+    --se-black: #000000;
+    --se-soft-gray: #f0f0f0;
+  }
+}

@@ -64,3 +64,63 @@ export interface Product {
   route?: string;         // logic.naci.tech/ROUTE for "See it live" link
   tags?: string[];        // for search
 }
+
+// === ShopEllari Brand Book v1.0 — V's Schema Additions ===
+
+export type BuyerState =
+  | 'overwhelmed'
+  | 'curious'
+  | 'building'
+  | 'fixing'
+  | 'scaling'
+  | 'recovering'
+  | 'protecting';
+
+export type ComplexityLevel = 'low' | 'medium' | 'high';
+
+export type UseType = 'self-guided' | 'supported' | 'professional-review-recommended';
+
+export type ProductLifecycle = 'draft' | 'active' | 'upgraded' | 'legacy' | 'deprecated';
+
+export type TrustMark =
+  | 'ellari-verified'
+  | 'seal-attached'
+  | 'system-linked'
+  | 'professional-use-ready'
+  | 'caregiver-safe'
+  | 'evidence-ready'
+  | 'versioned-artifact';
+
+// Product Creation Gate — all fields required before a product ships
+// If a product can't answer these 4 questions clearly, it is blocked.
+export interface ProductCreationGate {
+  problem_solved: string;          // What problem does this solve?
+  target_state: BuyerState;        // What buyer state does it target?
+  system_context: string;          // Where does it fit in the system?
+  replaces_or_improves: string;    // What does it replace or improve?
+}
+
+// Full product metadata — all fields from V's §XXXV schema
+export interface ShopEllariProductMeta {
+  product_name: string;
+  product_line: string;
+  domain: 'identity' | 'systems' | 'emotional' | 'operational' | 'infrastructure';
+  function: 'diagnose' | 'build' | 'protect' | 'optimize' | 'translate';
+  format: 'tool' | 'kit' | 'guide' | 'system' | 'artifact';
+  buyer_state: BuyerState;
+  complexity_level: ComplexityLevel;
+  system_context: string;          // "This belongs to: [System]. This connects to: [X]. Used when: [Y]."
+  proof_type: string;
+  version: string;
+  recommended_stack: string;
+  not_for_you_if: string[];        // Exclusion copy — money filter
+  works_with: string[];            // Cross-product flow
+  professional_use_ready: boolean;
+  use_type: UseType;
+  lifecycle: ProductLifecycle;
+  trust_marks: TrustMark[];
+  used_when: string;               // "Used When" field — mandatory
+  next_step?: string;              // System Progression link
+  system_id?: string;              // e.g. ELLARI-MIRROR-042
+  last_updated?: string;           // ISO date
+}
