@@ -1,3 +1,4 @@
+import ProductDetailPage from './pages/ProductDetailPage';
 import HomePage from './pages/HomePage';
 import { StacksIndex, StackDetail } from './pages/StackPage';
 /**
@@ -207,6 +208,7 @@ export default function App() {
       <Route path="*" element={<Store />} />
       <Route path="/stacks" element={<StacksIndex />} />
           <Route path="/stacks/:id" element={<StackDetail />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
         </Routes>
   );
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 /**
  * ProductCard.tsx — renders a single product from the registry
  * Brand colors and styles are driven entirely by the product's brand config.
@@ -89,6 +90,7 @@ export function ProductCard({ product }: { product: Product }) {
         }}>
           {product.name}
         </h3>
+            <Link to={`/product/${product.id}`} style={{ fontFamily: "var(--font-mono, monospace)", fontSize: "0.62rem", color: "var(--se-gold, #d6b168)", textDecoration: "none", letterSpacing: "0.1em", display: "inline-block", marginTop: "4px" }}>VIEW DETAILS →</Link>
 
         {/* Tagline */}
         <p style={{
