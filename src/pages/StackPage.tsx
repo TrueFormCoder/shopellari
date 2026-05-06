@@ -202,18 +202,18 @@ export function StackDetail() {
           <h3 style={{ fontFamily: "var(--font-serif, Georgia, serif)", fontSize: "1.6rem", fontWeight: 400, color: "var(--se-cream, #f9f6f1)", margin: "0 0 24px" }}>
             Ready to build this stack?
           </h3>
-          {isActive ? (
-            <button style={{ background: "var(--se-gold, #d6b168)", color: "var(--se-black, #1a1a1a)", border: "none", padding: "14px 36px", fontFamily: "var(--font-sans, sans-serif)", fontSize: "0.9rem", fontWeight: 600, borderRadius: "2px", cursor: "pointer", letterSpacing: "0.04em" }}>
+          {stack.stripe_url ? (
+            <a href={stack.stripe_url} style={{ display: 'inline-block', background: 'var(--se-gold, #d6b168)', color: "var(--se-black, #1a1a1a)", border: "none", padding: "14px 36px", fontFamily: "var(--font-sans, sans-serif)", fontSize: "0.9rem", fontWeight: 600, borderRadius: "2px", cursor: "pointer", letterSpacing: "0.04em" }}>
               Build This Stack
-            </button>
+            </a>
           ) : (
             <div>
               <p style={{ color: "var(--se-mid-gray, #b8b3ac)", fontSize: "0.875rem", marginBottom: "16px" }}>This stack is coming soon. Enter your email to be notified.</p>
               <div style={{ display: "flex", gap: "8px", justifyContent: "center", flexWrap: "wrap" }}>
                 <input type="email" placeholder="your@email.com" style={{ padding: "12px 16px", border: "1px solid var(--se-mid-gray, #b8b3ac)", borderRadius: "2px", background: "transparent", color: "var(--se-cream, #f9f6f1)", fontFamily: "var(--font-sans, sans-serif)", fontSize: "0.875rem", width: "260px" }} />
-                <button style={{ background: "var(--se-gold, #d6b168)", color: "var(--se-black, #1a1a1a)", border: "none", padding: "12px 24px", fontFamily: "var(--font-sans, sans-serif)", fontSize: "0.875rem", fontWeight: 600, borderRadius: "2px", cursor: "pointer" }}>
+                <a href={stack.stripe_url} style={{ display: 'inline-block', background: 'var(--se-gold, #d6b168)', color: "var(--se-black, #1a1a1a)", border: "none", padding: "12px 24px", fontFamily: "var(--font-sans, sans-serif)", fontSize: "0.875rem", fontWeight: 600, borderRadius: "2px", cursor: "pointer" }}>
                   Notify Me
-                </button>
+                </a>
               </div>
             </div>
           )}

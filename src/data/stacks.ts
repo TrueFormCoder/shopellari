@@ -26,6 +26,7 @@ export interface Stack {
   not_for: string;
   savings_pct: number;     // 10–18 only
   stripe_bundle_key?: string;
+  stripe_url?: string;
   status: 'active' | 'coming-soon' | 'archived';
   system_id: string;       // e.g. SE-STACK-001
 }
@@ -34,6 +35,7 @@ export const STACKS: Stack[] = [
 
   {
     id: 'start-clear-stack',
+stripe_url: 'https://buy.stripe.com/cNi5kFb261v1dW8d2b7kc0h',
     name: 'The Start Clear Stack™',
     tagline: 'First tools for people who need to begin.',
     buyer_state: 'overwhelmed',
@@ -53,6 +55,7 @@ export const STACKS: Stack[] = [
 
   {
     id: 'record-it-stack',
+stripe_url: 'https://buy.stripe.com/14A28t8TYb5Bg4g4vF7kc0g',
     name: 'The Record It Stack™',
     tagline: 'For people who need evidence, memory, and decision traceability.',
     buyer_state: 'protecting',
@@ -90,6 +93,7 @@ export const STACKS: Stack[] = [
 
   {
     id: 'operator-stack',
+stripe_url: 'https://buy.stripe.com/28E6oJ0ns1v14ly5zJ7kc0i',
     name: 'The Operator Stack™',
     tagline: 'Advanced tools for founders, admins, and system builders.',
     buyer_state: 'building',
@@ -110,6 +114,7 @@ export const STACKS: Stack[] = [
 
   {
     id: 'protected-launch-stack',
+stripe_url: 'https://buy.stripe.com/14AfZj4DIc9FdW8faj7kc0j',
     name: 'The Protected Launch Stack™',
     tagline: 'For product and brand builders preparing a release.',
     buyer_state: 'scaling',
