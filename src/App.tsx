@@ -1,6 +1,7 @@
 import ProductDetailPage from './pages/ProductDetailPage';
 import HomePage from './pages/HomePage';
 import { StacksIndex, StackDetail } from './pages/StackPage';
+import CheckoutRedirect from './pages/CheckoutRedirect';
 /**
  * App.tsx update — add Routes for /product/[slug] and update ProductCard
  * to show "View details" link + WaitlistCapture for waitlist products
@@ -13,7 +14,6 @@ import { Routes, Route, Link } from "react-router-dom";
 import { PRODUCTS, FEATURED_PRODUCTS, filterProducts } from "./data/products";
 import { BRANDS } from "./data/brands";
 import { ProductCard } from "./components/ProductCard";
-import ProductDetail from "./components/ProductDetail";
 
 const CATEGORY_LABELS: Record<string, string> = {
   all: "All products",
@@ -81,7 +81,7 @@ function Store() {
           <span className="mono" style={{ fontSize: 9, color: C.muted, letterSpacing: ".12em" }}>AN ELLARI VENTURES STORE</span>
         </div>
         <div className="desktop-only" style={{ display: "flex", gap: 24 }}>
-          {[["Logic Rigor", "https://logic.naci.tech"], ["KinderGurus", "https://kindergurus.com"], ["Ellari Ventures", "https://ellari.dev"], ["Contact", "mailto:hello@ellari.dev"]].map(([l, h]) => (
+          {[["Catch The Pattern™", "https://logic.naci.tech"], ["A11y Gate™", "https://logic.naci.tech/a11y"], ["KinderGurus", "https://kindergurus.com"], ["Ellari Ventures", "https://ellari.dev"], ["Contact", "mailto:hello@ellari.dev"]].map(([l, h]) => (
             <a key={l} href={h} className="mono" style={{ fontSize: 11, color: C.muted, textDecoration: "none" }}
               onMouseEnter={e => (e.currentTarget.style.color = C.amber)}
               onMouseLeave={e => (e.currentTarget.style.color = C.muted)}>{l}</a>
@@ -203,12 +203,18 @@ function Store() {
 export default function App() {
   return (
     <Routes>
+      {/* Primary routes */}
       <Route path="/" element={<HomePage />} />
-      <Route path="/product/:slug" element={<ProductDetail />} />
-      <Route path="*" element={<Store />} />
+      <Route path="/product/:id" element={<ProductDetailPage />} />
       <Route path="/stacks" element={<StacksIndex />} />
-          <Route path="/stacks/:id" element={<StackDetail />} />
-          <Route path="/product/:id" element={<ProductDetailPage />} />
-        </Routes>
+      <Route path="/stacks/:id" element={<StackDetail />} />
+      <Route path="/checkout/:key" element={<CheckoutRedirect />} />
+
+      {/* Store — catch-all (must be last before wildcard) */}
+      <Route path="/store" element={<Store />} />
+
+      {/* Wildcard — always last */}
+      <Route path="*" element={<Store />} />
+    </Routes>
   );
 }
